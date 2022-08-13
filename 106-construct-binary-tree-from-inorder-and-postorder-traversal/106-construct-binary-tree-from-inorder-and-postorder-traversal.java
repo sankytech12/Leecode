@@ -18,13 +18,11 @@ class Solution {
         return build(inorder,0,inorder.length-1,postorder,0,postorder.length-1);
     }
     public TreeNode build(int []inorder,int ilo,int ihi,int []postorder,int plo,int phi){
-        if(ilo>ihi||plo>phi){
+        if(ilo>ihi){
             return null;
         }
         TreeNode nn=new TreeNode(postorder[phi]);
-        if(ilo==ihi){
-            return nn;
-        }
+        
         int i=search(inorder,postorder[phi]);
         int noele=i-ilo;
         
