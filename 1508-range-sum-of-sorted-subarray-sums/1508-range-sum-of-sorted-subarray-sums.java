@@ -15,6 +15,6 @@ class Solution {
         for(int i=left-1;i<right;i++){
             ans=ans%mod+sums[i];
         }
-        return ans;
+        return ans%mod;
     }
 }
