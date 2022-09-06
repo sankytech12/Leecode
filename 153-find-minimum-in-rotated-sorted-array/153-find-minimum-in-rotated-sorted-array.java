@@ -18,12 +18,10 @@ class Solution {
 		int n=arr.length;
 		while(lo<=hi) {
 			int mid=(lo+hi)/2;
-			// int prev=(mid+n-1)%n;
-			// int next=(mid+1)%n;
 			if(mid>0 && arr[mid]<arr[mid-1])  {
                 System.out.print(arr[mid]);
 				return arr[mid];
-			}else if(arr[lo]<=arr[mid]&&arr[mid]>arr[hi]) {
+			}else if(arr[lo]<=arr[mid]&&arr[mid]>=arr[hi]) {
 				lo=mid+1;
 			}else {
 				hi=mid-1;
