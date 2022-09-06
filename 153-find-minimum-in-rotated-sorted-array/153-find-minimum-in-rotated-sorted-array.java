@@ -14,11 +14,12 @@ class Solution {
     private static int rotation2(int[] arr) {
 		int lo=0;
 		int hi=arr.length-1;
+        int n=arr.length;
 		int ans=-1;
-		int n=arr.length;
+		
 		while(lo<=hi) {
 			int mid=(lo+hi)/2;
-			if(mid>0 && arr[mid]<arr[mid-1])  {
+			if(arr[mid]<arr[(mid+n-1)%n])  {
                 System.out.print(arr[mid]);
 				return arr[mid];
 			}else if(arr[lo]<=arr[mid]&&arr[mid]>=arr[hi]) {
