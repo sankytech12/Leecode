@@ -30,6 +30,7 @@ class Solution {
         idx++;
         if(idx==k){
             ans=root.val;
+            return;
         }
         solve(root.right,k);
     }
