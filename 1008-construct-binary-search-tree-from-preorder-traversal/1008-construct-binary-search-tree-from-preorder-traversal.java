@@ -20,7 +20,7 @@ class Solution {
             return null;
         }
         TreeNode nn=new TreeNode(preorder[0]);
-        int root=preorder[0];
+        //int root=preorder[0];
         for(int i=1;i<preorder.length;i++){
             nn=AddBst(nn,preorder[i]);
         }
