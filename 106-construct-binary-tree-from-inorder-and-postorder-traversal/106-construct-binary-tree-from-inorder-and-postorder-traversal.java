@@ -22,9 +22,6 @@ class Solution {
             return null;
         }
         TreeNode nn=new TreeNode(postorder[phi]);
-        if(ilo==ihi){
-            return nn;
-        }
         int i=search(inorder,postorder[phi]);
         int noele=i-ilo;
         
