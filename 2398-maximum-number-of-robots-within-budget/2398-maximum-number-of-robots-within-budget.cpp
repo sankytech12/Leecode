@@ -23,24 +23,6 @@ public:
             }
             ans=max(ans,i-j+1);
         }
-        // while(ei<chargeTimes.size()){
-        //     sum+=runningCosts[ei];
-        //     while(!dq.empty() && dq.back()<chargeTimes[ei]){
-        //         dq.pop_back();
-        //     }
-        //     dq.push_back(chargeTimes[ei]);
-        //     long long tot=sum*(ei-si+1)+dq.front();
-        //     while(tot>budget){
-        //         sum-=runningCosts[si];
-        //         if(dq.front()==runningCosts[si]){
-        //             dq.pop_front();
-        //         }
-        //         tot=sum*(ei-si+1)+dq.front();
-        //         si++;
-        //     }
-        //     ans=max(ans,ei-si+1);
-        //     ei++;
-        // }
         
         return ans;
     }
