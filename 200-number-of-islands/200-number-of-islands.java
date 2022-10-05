@@ -16,12 +16,28 @@ class Solution {
 			for (int j = 0; j < grid[0].length; j++) {
 				if(grid[i][j]=='1' && vis[i][j]==0) {
 					count++;
-					bfs(grid,i,j,vis);
+					dfs(grid,i,j,vis);
 				}
 			}
 		}
 		return count;
     }
+    private static void dfs(char[][] grid, int i, int j, int[][] vis) {
+		// TODO Auto-generated method stub
+		vis[i][j]=1;
+        int r[]={0,1,0,-1};
+        int c[]={1,0,-1,0};
+		    for(int k=0;k<r.length;k++){
+                
+				int nr=r[k]+i;
+				int nc=c[k]+j;
+				if(nr>=0 && nr<grid.length && nc>=0 && nc<grid[0].length && grid[nr][nc]=='1' && vis[nr][nc]==0) {
+					dfs(grid, nr, nc, vis);
+				}
+			
+		}
+		
+	}
         
    	private static void bfs(char[][] grid, int i, int j, int[][] vis) {
 	   //TODO Auto-generated method stub
