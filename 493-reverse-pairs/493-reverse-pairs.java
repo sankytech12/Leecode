@@ -1,18 +1,28 @@
 class Solution {
     public int reversePairs(int[] nums) {
         return mergeSort(nums,0,nums.length-1);
-    }
-    private static int mergeSort(int[] arr, int i, int j) {
-		// TODO Auto-generated method stub
-		if(i>=j) return 0;
-		int count=0;
-		int mid=(i+j)/2;
-		count+=mergeSort(arr, i, mid);
-		count+=mergeSort(arr, mid+1, j);
-		count+=merge(arr,i,mid,j);
-		return count;
 	}
-
+	// private static int mergeSort(int[] arr, int i, int j) {
+	// 	// TODO Auto-generated method stub
+	// 	if(i>=j) return 0;
+	// 	int count=0;
+	// 	int mid=(i+j)/2;
+	// 	count+=mergeSort(arr, i, mid);
+	// 	count+=mergeSort(arr, mid+1, j);
+	// 	count+=merge(arr,i,mid,j);
+	// 	return count;
+	// }
+ private int mergeSort(int[] nums, int s, int e){
+        if(s>=e) return 0; 
+        int mid = s + (e-s)/2; 
+        int cnt = mergeSort(nums, s, mid) + mergeSort(nums, mid+1, e); 
+        for(int i = s, j = mid+1; i<=mid; i++){
+            while(j<=e && nums[i]/2.0 > nums[j]) j++; 
+            cnt += j-(mid+1); 
+        }
+        Arrays.sort(nums, s, e+1); 
+        return cnt; 
+    }
 	private static int merge(int[] arr, int low, int mid, int high) {
 		// TODO Auto-generated method stub
 		
