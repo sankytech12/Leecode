@@ -44,16 +44,30 @@ class Solution {
     //Function to reverse every sub-array group of size k.
     void reverseInGroups(ArrayList<Integer> arr, int n, int k) {
         // code here
-        for(int i=0;i<n;i=i+k){
-            int end=i+k-1;
-            if(end>=n) end=n-1;
-            int start=i;
-            while(start<end){
-                Collections.swap(arr,start,end);
-                start++;
-                end--;
-            }
+        // for(int i=0;i<n;i=i+k){
+        //     int end=i+k-1;
+        //     if(end>=n) end=n-1;
+        //     int start=i;
+        //     while(start<end){
+        //         Collections.swap(arr,start,end);
+        //         start++;
+        //         end--;
+        //     }
                 
+        // }
+        Stack<Integer> st=new Stack<>();
+        int idx=0;
+        for(int i=0;i<n;i++){
+            st.push(arr.get(i));
+            if(st.size()==k){
+                while(!st.isEmpty()){
+                    arr.set(idx++,st.pop());
+                }
+            }
         }
+        while(!st.isEmpty()){
+            arr.set(idx++,st.pop());
+        }
+        
     }
 }
